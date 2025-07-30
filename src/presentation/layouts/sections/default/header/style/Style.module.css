@@ -1,15 +1,129 @@
-.header {
-  width: 100%;
-  padding: 16px 24px;
-  background-color: #0f0f0f;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  border-bottom: 1px solid #222;
+
+
+@keyframes init {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
-.fixed {
-  position: fixed;
-  top: 0;
-  z-index: 10;
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111;
+  transition: opacity 0.6s ease;
+  opacity: 1;
+}
+
+.loaderFadeIn {
+  opacity: 1;
+}
+
+.loaderFadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-items: center;
+  align-items: center;
+  transition: top 0.5s ease, transform 0.5s ease;
+}
+
+
+
+.click_me_text {
+  font-size: 18px;
+  color: rgba(128, 128, 128, 0.5);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  line-height: 30px;
+  font-weight: 300;
+  opacity: 0;
+  animation: init 0.7s ease-out forwards;
+  animation-delay: 0.7s;
+  transition: opacity 0.4s ease;
+}
+
+.text {
+  opacity: 0;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  text-align: center;
+  font-weight: 800;
+  line-height: 50px;
+  animation: init 0.7s ease-out forwards;
+  transition: font-size 0.75s ease;
+}
+
+.big_text {
+  font-size: 66px;
+    transition: font-size 0.75s ease;
+}
+
+.small_text {
+  font-size: 42px;
+  transition: font-size 0.75s ease;
+}
+
+.top {
+  top: 30px;
+  transition: top 0.5s ease;
+}
+
+.center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.red {
+  color: #7A0A0A;
+}
+
+.delay {
+  animation: init 0.7s ease-out forwards;
+  animation-delay: 0.4s;
+}
+.hide {
+  opacity: 0;
+  color: rgba(0, 0, 0, 0);
+  user-select: none;
+  pointer-events: none;
+}
+
+.text_heigh {
+    line-height: 40px;
+    transition: line-height 0.75s ease;
+}
+.top_text_big {
+  font-size: 50px;
+}
+.top_text_small {
+  font-size: 36px;
 }

@@ -1,4 +1,5 @@
 import { StrictMode } from 'react';
+import { ClickProvider } from './items/ClickContext';
 
 interface Props {
   children: React.ReactNode;
@@ -6,9 +7,10 @@ interface Props {
 
 const allProviders: Record<string, React.ComponentType<{ children: React.ReactNode }>> = {
   strict: StrictMode,
+  loading: ClickProvider,
 };
 
-const providerOrder = ['strict', 'router', 'transition'];
+const providerOrder = ['strict', 'router', 'loading'];
 
 const AppProviders = ({ children }: Props) => {
   return providerOrder.reduceRight((acc, key) => {

@@ -1,17 +1,19 @@
 
 import Header from "../sections/default/header/Header";
-import Menu from "../sections/default/menu/Menu";
-import Footer from "../sections/default/footer/Footer";
+import Background from "@/presentation/renderutils/background/Background";
+import { useState } from "react";
 
 const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
+   const [isClick, setClick] = useState<boolean>(false);
+   const handleClick = () => {
+    setClick(true);
+   }
     return (
         <>
-            <Header />
-            <Menu />
-            <main>
-                {children}
-            </main>
-            <Footer />
+        <Background onClick={handleClick}>
+        <Header isClick={isClick} onClick={handleClick}/>
+        <main>{children}</main>
+        </Background>
         </>
     );
 };

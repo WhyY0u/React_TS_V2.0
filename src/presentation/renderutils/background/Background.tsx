@@ -1,15 +1,14 @@
-import type { MouseEventHandler, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import styles from './style/Style.module.css'
 
 
 type BackgroundProps = {
     children: ReactNode;
-    onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
-const Background: React.FC<BackgroundProps> = ({ children, onClick }) => {
+const Background: React.FC<BackgroundProps> = ({ children }) => {
     return (
-        <div className={styles.background} onClick={onClick}>
+        <div className={styles.background} >
             {children}
         </div>
     );

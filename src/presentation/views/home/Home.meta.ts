@@ -1,5 +1,6 @@
 const meta = {
-    path: "/login",
+    path: "/home",
+    layout: "home"
 };
 
 export default meta;

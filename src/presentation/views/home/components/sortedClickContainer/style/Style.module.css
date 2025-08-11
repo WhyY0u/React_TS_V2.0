@@ -1,0 +1,28 @@
+.sorted_click_container {
+    display: flex;
+    padding-left: 10px;
+    gap: 10px;
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.sort_option {
+    padding: 5px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    background: transparent;
+    color: #374151; 
+}
+
+.sort_option:hover {
+    background: rgba(96, 101, 250, 0.1);
+}
+
+.selected {
+    background: linear-gradient(135deg, #6065fa, #8c69f4);
+    color: white;
+}

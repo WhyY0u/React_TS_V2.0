@@ -1,16 +1,17 @@
 
 import { MdHeadset } from 'react-icons/md';
 import styles from './style/Style.module.css'
-import { UserApiRepository } from '@/data/repositories/user/UserRepositoriesApi';
 import { useEffect, useState } from 'react';
 import { type User } from '@/domain/entities/user/User';
 import { FaUserCircle } from "react-icons/fa";
+import UserApiRepository from '@/data/repositories/user/memory/InMemoryUserRepository';
 const Header = () => {
     const me = new UserApiRepository();
     const [user, setUser] = useState<User | null>(null);
     useEffect(() => {
         me.getMe().then(res => setUser(res));
-    },);
+    }, []);
+
     return (
         <>
             <div className={styles.header}>

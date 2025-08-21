@@ -9,7 +9,6 @@
     animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Фон иконки с появлением */
 .background_icon {
     background: linear-gradient(135deg, #6065fa, #8c69f4);
     display: flex;

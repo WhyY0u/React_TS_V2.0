@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { FaUserCircle, FaUser } from 'react-icons/fa';
 import styles from './styles/Style.module.css';
-
+import { useNavigate } from 'react-router';
+import InMemoryUserRepository from './../../../../../data/repositories/user/memory/InMemoryUserRepository'
 const LoginBox = () => {
     const [name, setName] = useState('');
-
+    const navigate = useNavigate();
+    const userRepo = new InMemoryUserRepository();
     useEffect(() => {
         const savedName = localStorage.getItem('name');
         if (savedName) setName(savedName);
@@ -12,7 +14,9 @@ const LoginBox = () => {
 
     const handleLogin = () => {
         if (name.trim()) {
+            //userRepo.register();
             localStorage.setItem('name', name.trim());
+            navigate('/home');
         }
     };
 

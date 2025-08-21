@@ -18,7 +18,7 @@
 }
 .ticket_status {
     font-family: Inter;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     color: rgb(94, 94, 94);
     text-align: center;
@@ -47,6 +47,7 @@
 }
 
 .color_grey {
+    padding-left: 5px;
     font-size: 17px; 
     font-weight: 600;
     color: grey;

@@ -5,7 +5,7 @@ export async function registerUser(
   user: User,
   repo: UserRepository
 ): Promise<void> {
-  const existing = await repo.findUserByIIN(user.iin);
+  const existing = await repo.findUserByID(user.id);
   if (existing != null) throw new Error("Пользователь с таким ИИН уже зарегистрирован");
   
   await repo.register(user);

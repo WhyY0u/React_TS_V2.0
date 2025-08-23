@@ -1,7 +1,10 @@
-import { UserRoles, type User } from "@/domain/entities/user/User";
+import { UserGroups, UserRoles, type User } from "@/domain/entities/user/User";
 import type { UserRepository } from "@/domain/repositories/user/UserRepository";
 
 export default class InMemoryUserApiRepository implements UserRepository {
+  async getAllGroups(): Promise<UserGroups[]> {
+    return Object.values(UserGroups);
+  }
 
   private fakeUser: User = {
     id: "1992381",

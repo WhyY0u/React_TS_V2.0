@@ -1,5 +1,5 @@
 const meta = {
-    path: "/administator",
+    path: "/user",
     layout: "home"
 };
 

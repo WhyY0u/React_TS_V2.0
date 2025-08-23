@@ -3,11 +3,15 @@ import { FaUserCircle, FaUser } from 'react-icons/fa';
 import styles from './styles/Style.module.css';
 import { useNavigate } from 'react-router';
 import InMemoryUserRepository from './../../../../../data/repositories/user/memory/InMemoryUserRepository'
+import DropDownMenu from '../dropDownMenu/DropDownMenu';
+import type { UserGroups } from '@/domain/entities/user/User';
 const LoginBox = () => {
     const [name, setName] = useState('');
     const navigate = useNavigate();
+    const [groups, setGroups] = useState<UserGroups[]>([]);
     const userRepo = new InMemoryUserRepository();
     useEffect(() => {
+        userRepo.getAllGroups().then(data => setGroups(data));
         const savedName = localStorage.getItem('name');
         if (savedName) setName(savedName);
     }, []);
@@ -36,6 +40,12 @@ const LoginBox = () => {
                     onChange={(e) => setName(e.target.value)}
                 />
             </div>
+            <DropDownMenu
+                options={groups}
+                placeholder="Выберите группу, к которой относитесь"
+                onSelect={(value) => console.log("Выбрано:", value)}
+                multiple={true}
+            />
 
             <div className={styles.buttons}>
                 <button

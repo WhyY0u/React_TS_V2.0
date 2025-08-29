@@ -57,7 +57,7 @@ const Home = () => {
     return (
         <div className={`${styles.main_container}`}>
             <p className={`${styles.name}`}>Добро пожаловать,<br /> <span className={`${styles.name_gradient}`}> {localStorage.getItem('name')}!</span></p>
-            <p className={`${styles.ticket_status}`}>Создавайте тикеты и отслеживайте их статус</p>
+            <p className={`${styles.ticket_status}`}>Сильный не тот, кто судит, а тот, кто помогает</p>
             <ContainerStats counts={counts} />
             <SortedContainer counts={counts} sortBy={sortBy} onSortChange={setSortBy} onStatusChange={handleStatusChange} selectedStatus={selectedStatus} />
             <div className={`${styles.ticket_list_name}`}>

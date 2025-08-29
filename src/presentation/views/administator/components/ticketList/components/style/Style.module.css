@@ -220,3 +220,70 @@
 .send_message:active {
     transform: scale(0.97);
 }
+.ai_comment_block {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f9f9ff, #f3f3f8);
+  border: 1px solid #e0e0f5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.ai_comment_header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.ai_icon {
+  color: #6065fa;
+  font-size: 18px;
+}
+
+.ai_title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #444;
+}
+
+.ai_comment_text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+.expand_button {
+  background: none;
+  border: none;
+  color: #444; 
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.expand_button:hover {
+  background: #f1f1f1; /* светло-серый hover */
+  color: #000; /* чуть темнее текст */
+}
+
+.expand_button:active {
+  transform: scale(0.96);
+  background: #e6e6e6; /* при нажатии */
+}
+
+.expand_button::after {
+  content: " ▼"; /* маленькая стрелка */
+  font-size: 12px;
+  transition: transform 0.25s ease;
+}
+
+.expand_button.active::after {
+  transform: rotate(-180deg); /* поворот стрелки вверх */
+}

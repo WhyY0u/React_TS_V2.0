@@ -26,6 +26,6 @@ export type UserGroups = typeof UserGroups[keyof typeof UserGroups];
 export type User = {
   readonly id: string;
   readonly fullname: string;
-  readonly groupsId: number[];
+  readonly groupsId: UserGroups[];
   readonly role: UserRole;
 };

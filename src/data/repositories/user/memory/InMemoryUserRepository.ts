@@ -8,8 +8,8 @@ export default class InMemoryUserApiRepository implements UserRepository {
 
   private fakeUser: User = {
     id: "1992381",
-    fullname: "Иванов Иван",
-    groupsId: [1, 2],
+    fullname: "Иванов Иван Ивановичь",
+    groupsId: ["Ветеран ВОВ", "Неполная семья"],
     role: UserRoles.Administrator
   };
   async getMe(): Promise<User> {

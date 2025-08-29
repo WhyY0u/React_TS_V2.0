@@ -42,7 +42,7 @@ const LoginBox = () => {
             </div>
             <DropDownMenu
                 options={groups}
-                placeholder="Выберите группу, к которой относитесь"
+                placeholder="Выберите группы, к которой относитесь"
                 onSelect={(value) => console.log("Выбрано:", value)}
                 multiple={true}
             />

@@ -34,21 +34,20 @@
   color: rgb(42, 42, 42);
 }
 
-label {
+.label {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
 }
 
-label p {
+.label_text {
   margin: 0 0 6px 2px;
   font-size: 14px;
   font-weight: 500;
   color: #444;
 }
 
-input,
-textarea {
+.input {
   border: 1px solid #d1d5db;
   border-radius: 8px;
   padding: 10px 12px;
@@ -58,18 +57,29 @@ textarea {
   transition: all 0.2s ease;
 }
 
-input:focus,
-textarea:focus {
+.input:focus {
   border-color: #6065fa;
   box-shadow: 0 0 0 3px rgba(96, 101, 250, 0.2);
 }
 
-textarea {
+.textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  outline: none;
+  transition: all 0.2s ease;
   resize: vertical;
   min-height: 100px;
 }
 
-button {
+.textarea:focus {
+  border-color: #6065fa;
+  box-shadow: 0 0 0 3px rgba(96, 101, 250, 0.2);
+}
+
+.button {
   margin-top: 10px;
   padding: 10px 16px;
   background: linear-gradient(135deg, #6065fa, #8c69f4);
@@ -82,15 +92,16 @@ button {
   transition: all 0.2s ease;
 }
 
-button:hover {
+.button:hover {
   background: linear-gradient(135deg, #4c50e0, #7b55e8);
   box-shadow: 0 4px 8px rgba(96, 101, 250, 0.3);
 }
 
-button:active {
+.button:active {
   transform: scale(0.97);
 }
-button:disabled {
+
+.button:disabled {
   background: linear-gradient(135deg, #4c51e0b5, #7c55e8aa);
   color: #ffffff;        
   cursor: not-allowed;   
@@ -98,6 +109,7 @@ button:disabled {
   transform: none;    
   opacity: 0.7;       
 }
+
 .counter {
   font-size: 12px;
   color: #6b7280; 

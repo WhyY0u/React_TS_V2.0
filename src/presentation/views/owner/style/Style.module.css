@@ -1,0 +1,16 @@
+.main_container {
+    width: 100%;
+}
+
+.text_one {
+    padding-top: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.3;
+}
+.text_two {
+    font-family: Inter;
+    text-align: center;
+}
